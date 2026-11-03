@@ -1,40 +1,23 @@
-// import React from 'react';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import logo from '../assets/images/logo.png';
+//  import React from 'react';
+
+import LatestProducts from './common/LatestProducts';   
+import FeaturedProducts from './common/FeaturedProducts';
+import Hero from './common/Hero';
+import Layout from './common/layout';
 const Home = () => {
     return (
         <>
-            <header className='shadow'>
-                <div className='bg-dark text-center py-3'>
-                    <span className='text-white'> Your Fashion Partner  </span>
-                </div>
-                <div className='container'>
-                      <Navbar expand="lg" className="">
-                        <Navbar.Brand href="#">
-                            <img src={logo} alt="Logo" width="170" />
-                        </Navbar.Brand>
-                        <Navbar.Toggle aria-controls="navbarScroll" />
-                        <Navbar.Collapse id="navbarScroll">
-                            <Nav
-                                className="ms-auto my-2 my-lg-0"
-                                style={{ maxHeight: '100px' }}
-                                navbarScroll
-                            >
-                                <Nav.Link href="#action1">Mens</Nav.Link>
-                                <Nav.Link href="#action2">Women</Nav.Link>
-                                <Nav.Link href="#action3">Kids</Nav.Link>
+        <Layout>
+            <Hero />
+        
+               <LatestProducts />
+               <FeaturedProducts />
+        </Layout>
+        
+           
+            
 
-                            </Nav>
-
-                        </Navbar.Collapse>
-
-                </Navbar>
-
-
-                </div>
-
-            </header>
+               
         </>
     );
 }
