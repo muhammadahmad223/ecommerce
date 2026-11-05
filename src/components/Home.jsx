@@ -3,7 +3,7 @@
 import LatestProducts from './common/LatestProducts';   
 import FeaturedProducts from './common/FeaturedProducts';
 import Hero from './common/Hero';
-import Layout from './common/layout';
+import Layout from './common/Layout';
 const Home = () => {
     return (
         <>

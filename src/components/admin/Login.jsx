@@ -2,7 +2,7 @@
 import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import Layout from '../common/layout'
+import Layout from '../common/Layout'
 import { apiUrl } from '../common/http'
 import { toast } from 'react-toastify'
 import { AdminAuthContext } from '../context/AdminAuth'

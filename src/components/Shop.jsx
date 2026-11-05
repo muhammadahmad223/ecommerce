@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from './common/layout';
+import Layout from './common/Layout';
 import ProductImg from '../assets/images/two.jpg';
 import { Link } from 'react-router-dom';
 const Shop = () => {
