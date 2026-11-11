@@ -13,7 +13,7 @@ import { AdminRequireAuth } from './components/admin/AdminRequireAuth'
 
 import { ToastContainer } from 'react-toastify'
 import {default as ShowCategories } from './components/admin/category/Show'
-
+import {default as CreateCategory } from './components/admin/category/Create'
 function App() {
 
     return (
@@ -50,8 +50,14 @@ function App() {
                             <AdminRequireAuth>
                                <ShowCategories/>
                             </AdminRequireAuth>
-                        }
-                    />
+                        }/>
+                        <Route
+                        path='/admin/categories/create'
+                        element={
+                            <AdminRequireAuth>
+                               <CreateCategory/>
+                            </AdminRequireAuth>
+                        }/>
 
                 </Routes>
 

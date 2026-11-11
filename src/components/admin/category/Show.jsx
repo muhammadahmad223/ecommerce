@@ -4,13 +4,16 @@ import { Link } from 'react-router-dom';
 import Layout from '../../common/Layout';
 import Sidebar from '../../common/Sidebar';
 import { apiUrl, adminToken } from '../../common/http';
+import Loader from '../../common/Loader';
+import Nostate from '../../common/Nostate';
 
 const Show = () => {
 
     const [categories, setCategories] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loader, setLoader] = useState(false);
 
     const fetchCategories = async () => {
+        setLoader(true);
 
         try {
             const res = await fetch(`${apiUrl}/categories`, {
@@ -35,7 +38,7 @@ const Show = () => {
         } catch (error) {
             console.log("Error fetching categories:", error);
         } finally {
-            setLoading(false);
+            setLoader(false);
         }
     };
 
@@ -51,7 +54,7 @@ const Show = () => {
                     <div className="d-flex justify-content-between mt-5 pb-3">
                         <h4 className="h4 pb-0 mb-0">Categories</h4>
 
-                        <Link className="btn btn-primary" to="">
+                        <Link to="/admin/categories/create" className="btn btn-primary">
                             Create
                         </Link>
                     </div>
@@ -59,10 +62,22 @@ const Show = () => {
                     <div className="col-md-3">
                         <Sidebar />
                     </div>
-
+ 
                     <div className="col-md-9">
                         <div className="card shadow p-4">
+                            
                             <div className="card-body">
+                                  {
+                              loader == true && <Loader/>  
+                            }
+                              
+                              {
+                                loader == false && categories.length === 0 && <Nostate title="Categories Not Found" />
+                              }
+                              
+                              {
+                               categories && categories.length> 0 && 
+                            
 
                                 <table className="table table-hover">
 
@@ -77,7 +92,7 @@ const Show = () => {
 
                                     <tbody>
 
-                                        {loading ? (
+                                        {loader ? (
                                             <tr>
                                                 <td colSpan="4" className="text-center">
                                                     Loading categories...
@@ -128,7 +143,7 @@ const Show = () => {
                                     </tbody>
 
                                 </table>
-
+                              }
                             </div>
                         </div>
                     </div>
