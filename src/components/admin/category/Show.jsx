@@ -126,7 +126,7 @@ const Show = () => {
                                                     </td>
 
                                                     <td>
-                                                        <Link className="text-primary">
+                                                    <Link to={`/admin/categories/edit/${category.id}`} className="text-primary">
                                                             Edit
                                                         </Link>
 
